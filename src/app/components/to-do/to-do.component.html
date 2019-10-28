@@ -1,0 +1,37 @@
+<div>
+    <input [(ngModel)]="newToDo.Name" type="text" placeholder="Name eingeben..."/>    
+    <input [(ngModel)]="newToDo.Description" type="text" />
+    <input [(ngModel)]="newToDo.CreatedAt" type="datetime" />
+    <input [(ngModel)]="newToDo.Priority" type="number"/>
+    <input [(ngModel)]="newToDo.Done" type="checkbox" />    
+    <button (click)="createToDo()">Create</button>
+</div>
+
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+        <th>CreatedAt</th>
+        <th>Priority</th>
+        <th>Done</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of toDos">
+            <td>
+                {{todo.Name}}
+            </td>
+            <td>
+                {{todo.Description}}
+            </td>
+            <td>
+                {{todo.CreatedAt}}
+            </td>
+            <td>
+                {{todo.Priority}}
+            </td>
+            <td>
+                {{todo.Done}}
+            </td>
+        </tr>
+    </tbody>
+</table>
